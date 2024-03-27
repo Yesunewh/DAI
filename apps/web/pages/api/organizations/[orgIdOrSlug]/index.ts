@@ -59,6 +59,7 @@ async function handleGetOrganization(
   if (!organization) {
     return sendNotFoundError(res);
   }
+  // console.log()
 
   return res.json(OrganizationResponse.fromEntity(organization));
 }

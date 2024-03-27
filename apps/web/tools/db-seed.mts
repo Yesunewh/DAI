@@ -28,10 +28,10 @@ async function main() {
     const createdUser = await tx.user.create({
       data: {
         id: IDS.userId,
-        email: 'bruce@wayne-enterprises.com',
-        firstName: 'Bruce',
-        lastName: 'Wayne',
-        passwordHash: await hash('SecureAIToolsFTW!', 12),
+        email: 'admin@fkadeal.com',
+        firstName: 'fkadeal',
+        lastName: 'admin',
+        passwordHash: await hash('password', 12),
         forcePasswordReset: true,
       },
     });
@@ -39,7 +39,7 @@ async function main() {
     const createdOrg = await tx.organization.create({
       data: {
         id: IDS.orgId,
-        name: 'Wayne Enterprises',
+        name: 'Faris Enterprises',
         slug: '-',
         defaultModel: 'mistral',
         defaultModelType: 'OLLAMA',

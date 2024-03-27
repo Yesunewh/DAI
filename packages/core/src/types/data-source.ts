@@ -1,6 +1,6 @@
 export enum DataSource {
   UPLOAD = "UPLOAD",
-  PAPERLESS_NGX = "PAPERLESS_NGX",
+  PAPERLESS_NGX = "FARIS_DMS",
   GOOGLE_DRIVE = "GOOGLE_DRIVE",
   NOTION = "NOTION",
 }
@@ -11,7 +11,7 @@ export const toDataSource = (s: string): DataSource =>
 export const dataSourceToReadableName = (type: DataSource): string => {
   switch (type) {
     case DataSource.PAPERLESS_NGX:
-      return "Paperless-ngx";
+      return "paperless-ngx";
     case DataSource.UPLOAD:
       return "Upload";
     case DataSource.GOOGLE_DRIVE:

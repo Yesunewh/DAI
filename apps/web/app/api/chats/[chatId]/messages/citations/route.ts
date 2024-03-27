@@ -20,6 +20,7 @@ const chatService = new ChatService();
 const documentCollectionService = new DocumentCollectionService();
 const citationService = new CitationService();
 const permissionService = new PermissionService();
+console.log('process.env.VECTOR_DB_SERVER!',process.env.VECTOR_DB_SERVER!);
 const chromaClient = new ChromaClient({
   path: removeTrailingSlash(process.env.VECTOR_DB_SERVER!),
 });

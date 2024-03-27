@@ -21,8 +21,8 @@ Private and secure AI tools for everyone's productivity.
 #### Chat with documents demo: Locally running Mistral (M2 MacBook)
 [![Chat with documents demo: Locally running Mistral](https://img.youtube.com/vi/UvRHL6f_w74/0.jpg)](https://www.youtube.com/watch?v=UvRHL6f_w74)
 
-#### Chat with Paperless-ngx documents demo: Locally running Llama2-7b (M2 MacBook)
-[![Paperless-ngx integration demo](https://img.youtube.com/vi/dSAZefKnINc/0.jpg)](https://www.youtube.com/watch?v=dSAZefKnINc)
+#### Chat with faris-Dms documents demo: Locally running Llama2-7b (M2 MacBook)
+[![faris-Dms integration demo](https://img.youtube.com/vi/dSAZefKnINc/0.jpg)](https://www.youtube.com/watch?v=dSAZefKnINc)
 
 #### Document collections demo
 [![Document Collections demo](https://img.youtube.com/vi/PwvfVx8VCoY/0.jpg)](https://www.youtube.com/watch?v=PwvfVx8VCoY)
@@ -101,7 +101,7 @@ A set of features on our todo list (in no particular order).
 * ✅ Support for OpenAI, Claude etc APIs
 * ✅ Reusable document collections
 * ✅ Offline document processing
-* ✅ Integration with Paperless-ngx
+* ✅ Integration with faris-Dms
 * ✅ Integration with Google Drive
 * Support more file types (Google Doc, Docx, Markdown etc)
 * Support for markdown rendering

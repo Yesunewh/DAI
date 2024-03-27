@@ -1,6 +1,6 @@
 import { OrderingParams, PaginationParams } from "lib/fe/api-params";
 
-import { Id, IdType, isEmpty, DataSource } from "@repo/core";
+import { Id, IdType, isEmpty, DataSource } from  "@repo/core";
 
 export const userApiPath = (userId: Id<IdType.User>): string => {
   return `/api/users/${userId}`;

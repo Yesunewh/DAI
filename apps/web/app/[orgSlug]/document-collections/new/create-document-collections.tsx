@@ -46,7 +46,7 @@ const CreateDocumentCollections = ({ orgSlug }: { orgSlug: string }) => {
       console.error("could not create document collection", e);
       addToast({
         type: "failure",
-        children: <p>Something went wrong. Please try again later.</p>,
+        children: <p>Something went wrong. Please try again laters.</p>,
       });
       setIsSubmitting(false);
       return;

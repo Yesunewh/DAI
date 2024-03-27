@@ -24,7 +24,7 @@ export const authOptions: AuthOptions = {
         username: {
           label: "Email",
           type: "email",
-          placeholder: "bruce@wayne-enterprises.com",
+          placeholder: "admin@fkadeal.com",
         },
         password: { label: "Password", type: "password" },
       },

@@ -49,7 +49,7 @@ export function Sidebar({
           e.preventDefault();
         }}
       >
-        SecureAI Tools
+        Data Sense
       </FlowbiteSidebar.Logo>
       <FlowbiteSidebar.Items>
         <FlowbiteSidebar.ItemGroup>

@@ -206,11 +206,11 @@ export default function NewChat({ orgSlug }: { orgSlug: string }) {
         <div className={tw("flex flex-col grow items-center justify-center")}>
           <div className={tw("flex flex-col items-center")}>
             <Image
-              className={tw(`h-20 w-20`)}
-              src="/logo.png"
+              className={tw(`h-20 w-96`)}
+              src="/datasense512.png"
               alt="logo"
-              width={80}
-              height={80}
+              width={1607}
+              height={260}
             />
             <span className={tw("font-semibold text-xl mt-4")}>
               How can I help you today?
@@ -250,9 +250,7 @@ export default function NewChat({ orgSlug }: { orgSlug: string }) {
                     selectedDocuments={selectedDocuments}
                     onDocumentsSelected={(dataSource, newSelection) => {
                       setSelectedDocuments(
-                        new Map(
-                          selectedDocuments.set(dataSource, newSelection),
-                        ),
+                        new Map(selectedDocuments.set(dataSource, newSelection),),
                       );
                     }}
                   />

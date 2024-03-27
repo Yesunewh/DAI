@@ -103,7 +103,7 @@ const LogInPage: NextPage = () => {
                   <Label htmlFor="email" value="Your email" />
                   <TextInput
                     id="email"
-                    placeholder="bruce@wayne-enterprises.com"
+                    placeholder="admin@fkadeal.com"
                     required
                     type="email"
                     autoComplete="email"

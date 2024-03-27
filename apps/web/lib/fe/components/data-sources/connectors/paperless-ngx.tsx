@@ -97,7 +97,7 @@ export const PaperlessNgxConnector = ({
           </div>
           <TextInput
             id="instance-url"
-            placeholder="URL of Paperless-ngx instance"
+            placeholder="URL of faris-Dms instance"
             required
             type="url"
             value={urlInput}
@@ -117,7 +117,7 @@ export const PaperlessNgxConnector = ({
           </div>
           <TextInput
             id="auth-token"
-            placeholder="API Auth Token from Paperless-ngx instance"
+            placeholder="API Auth Token from faris-Dms instance"
             required
             type="text"
             value={authTokenInput}
@@ -127,11 +127,11 @@ export const PaperlessNgxConnector = ({
             disabled={isSubmitting}
             helperText={
               <span>
-                Get API token from Paperless-ngx by opening the "My Profile"
+                Get API token from faris-Dms by opening the "My Profile"
                 link in the user dropdown found in the web UI and clicking the
                 circular arrow button. &nbsp;
                 <Link
-                  href="https://docs.paperless-ngx.com/api/#authorization:~:text=You%20can%20create%20(or%20re,endpoint%20to%20acquire%20authentication%20tokens.&text=Tokens%20can%20also%20be%20managed%20in%20the%20Django%20admin."
+                  href="https://docs.faris-Dms.com/api/#authorization:~:text=You%20can%20create%20(or%20re,endpoint%20to%20acquire%20authentication%20tokens.&text=Tokens%20can%20also%20be%20managed%20in%20the%20Django%20admin."
                   target="_blank"
                 >
                   More info
@@ -153,8 +153,8 @@ export const PaperlessNgxConnector = ({
         dismissible={false}
         msg={
           <p>
-            Successfully connected to Paperless-ngx. Now you can select files
-            from Paperless-ngx when needed
+            Successfully connected to faris-Dms. Now you can select files
+            from faris-Dms when needed
           </p>
         }
         onButtonClick={() => {
@@ -173,7 +173,7 @@ function renderConnectivityCheckError(
   const { ok, status, error } = connectionCheckResponse;
   if (status === StatusCodes.UNAUTHORIZED || status === StatusCodes.FORBIDDEN) {
     errorMessage =
-      "Invalid auth token. Make sure to provide a valid API auth token from Paperless-ngx";
+      "Invalid auth token. Make sure to provide a valid API auth token from faris-Dms";
   } else {
     errorMessage = error ?? "Something went wrong";
   }

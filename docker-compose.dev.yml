@@ -26,7 +26,7 @@ services:
       # Default configuration for persist_directory is "/chroma/chroma/"
       - ./dev-data/vector-db:/chroma/chroma/
     ports:
-      - 8000:8000
+      - 8001:8000
 
   message-broker-dev:
     image: rabbitmq:management
