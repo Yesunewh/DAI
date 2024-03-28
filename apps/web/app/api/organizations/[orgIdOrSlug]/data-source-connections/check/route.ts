@@ -6,7 +6,7 @@ import { OrganizationService } from "lib/api/services/organization-service";
 import { getWebLogger } from "lib/api/core/logger";
 
 import { DataSource, dataSourceToReadableName } from "@repo/core";
-import { NextResponseErrors, PaperlessNgxClient } from "@repo/backend";
+import { NextResponseErrors, FarisDmsClient } from "@repo/backend";
 import { DataSourceConnectionCheckRequest } from "lib/types/api/data-source-connection-check.request";
 import { DataSourceConnectionCheckResponse } from "lib/types/api/data-source-connection-check.response";
 
@@ -43,13 +43,13 @@ export async function POST(
   const dataSourceConnectionCheckRequest =
     (await req.json()) as DataSourceConnectionCheckRequest;
   const { dataSource, baseUrl, token } = dataSourceConnectionCheckRequest;
-  if (dataSource !== DataSource.PAPERLESS_NGX) {
+  if (dataSource !== DataSource.FARIS_DMS) {
     return NextResponseErrors.badRequest(`${dataSource} can't be checked`);
   }
 
   // TODO: Add switch case when we have more data sources that can be checked!
 
-  const client = new PaperlessNgxClient(baseUrl, token);
+  const client = new FarisDmsClient(baseUrl, token);
   try {
     const resp = await client.getDocuments({});
     if (!resp.ok) {

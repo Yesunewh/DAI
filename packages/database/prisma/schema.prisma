@@ -217,7 +217,7 @@ model DocumentChunk {
 
 // The oauth credentials at org level for the data sources that need it.
 // For example, GOOGLE_DRIVE needs a data source config at org level, but UPLOAD and 
-// PAPERLESS_NGX don't need it.
+// FARIS_DMS don't need it.
 model OrgDataSourceOAuthCredential {
   id           String       @id
   // Enum controlled by DataSource in TS

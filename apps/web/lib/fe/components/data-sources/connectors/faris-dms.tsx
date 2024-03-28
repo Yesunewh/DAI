@@ -18,7 +18,7 @@ import { DataSourceConnectionCheckResponse } from "lib/types/api/data-source-con
 
 import { DataSource, Id, IdType, isEmpty } from "@repo/core";
 
-export const PaperlessNgxConnector = ({
+export const FarisDmsConnector = ({
   orgSlug,
   userId,
 }: {
@@ -43,13 +43,13 @@ export const PaperlessNgxConnector = ({
       const checkResponse = await checkDataSourceConnection(orgSlug, {
         baseUrl: urlInput,
         token: authTokenInput,
-        dataSource: DataSource.PAPERLESS_NGX,
+        dataSource: DataSource.FARIS_DMS,
       });
 
       if (checkResponse.ok) {
         // Create data source connection
         const connection = await createDataSourceConnection(orgSlug, {
-          dataSource: DataSource.PAPERLESS_NGX,
+          dataSource: DataSource.FARIS_DMS,
           baseUrl: urlInput,
           accessToken: authTokenInput,
         });

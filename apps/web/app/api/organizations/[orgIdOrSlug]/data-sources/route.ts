@@ -14,7 +14,7 @@ const oauthService = new OAuthService();
 // Data sources that don't need any configs at instance or org level.
 const PRE_CONFIGURED_DATA_SOURCES = [
   DataSource.UPLOAD,
-  DataSource.PAPERLESS_NGX,
+  DataSource.FARIS_DMS, 
 ];
 
 export async function GET(

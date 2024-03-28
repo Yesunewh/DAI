@@ -15,5 +15,5 @@ export * from "./utils/api.utils";
 export * from "./utils/document-uri-utils";
 export * from "./utils/indexing-queue-utils";
 export * from "./utils/utils";
-export * from "./clients/paperless-ngx-client";
+export * from "./clients/faris-dms-client";
 export * from "./clients/google-drive-client";

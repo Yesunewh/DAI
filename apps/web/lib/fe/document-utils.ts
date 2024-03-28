@@ -81,6 +81,7 @@ const uploadDocument = async (
   const formData = new FormData();
   formData.append("file", file);
   formData.append("indexingMode", indexingMode);
+  console.log('testing uploading')
 
   const res = await fetch(uploadDocumentApiPath(documentCollectionId), {
     method: "POST",

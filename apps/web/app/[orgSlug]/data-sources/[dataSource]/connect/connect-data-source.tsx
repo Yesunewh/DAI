@@ -8,7 +8,7 @@ import { Alert, Spinner } from "flowbite-react";
 
 import AppsLoggedInLayout from "lib/fe/components/apps-logged-in-layout";
 import { PageTitle } from "lib/fe/components/page-title";
-import { PaperlessNgxConnector } from "lib/fe/components/data-sources/connectors/paperless-ngx";
+import { FarisDmsConnector } from "lib/fe/components/data-sources/connectors/faris-dms";
 import { TokenUser } from "lib/types/core/token-user";
 import { getOrganizationsIdOrSlugDataSourceConnectionsApiPath } from "lib/fe/api-paths";
 import { createFetcher } from "lib/fe/api";
@@ -90,8 +90,8 @@ const ConnectDataSource = ({
     const userId = Id.from<IdType.User>(tokenUser.id);
 
     switch (dataSource) {
-      case DataSource.PAPERLESS_NGX:
-        return <PaperlessNgxConnector orgSlug={orgSlug} userId={userId} />;
+      case DataSource.FARIS_DMS:
+        return <FarisDmsConnector orgSlug={orgSlug} userId={userId} />;
       case DataSource.GOOGLE_DRIVE:
         return <GoogleDriveConnector orgSlug={orgSlug} userId={userId} />;
       case DataSource.NOTION:

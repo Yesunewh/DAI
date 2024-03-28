@@ -25,7 +25,7 @@ import {
 } from "@repo/backend";
 
 const SUPPORTED_DATA_SOURCES = new Set<DataSource>([
-  DataSource.PAPERLESS_NGX,
+  DataSource.FARIS_DMS,
   DataSource.GOOGLE_DRIVE,
   DataSource.NOTION,
 ]);

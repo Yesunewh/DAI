@@ -4,7 +4,7 @@ import { PageObjectResponse } from "@notionhq/client/build/src/api-endpoints";
 
 import { API } from "../utils/api.utils";
 import { LocalObjectStorageService } from "./local-object-storage-service";
-import { PaperlessNgxClient } from "../clients/paperless-ngx-client";
+import { FarisDmsClient } from "../clients/faris-dms-client";
 import { GoogleDriveClient } from "../clients/google-drive-client";
 import { DataSourceConnectionService } from "./data-source-connection-service";
 import { ClientResponse } from "../clients/client-response";
@@ -207,12 +207,12 @@ export class DocumentService {
 
     let resp: ClientResponse<Blob>;
     switch (connection.dataSource) {
-      case DataSource.PAPERLESS_NGX:
-        const paperlessNgxClient = new PaperlessNgxClient(
+      case DataSource.FARIS_DMS:
+        const farisDmsClient = new FarisDmsClient(
           connection.baseUrl!,
           connection.accessToken!,
         );
-        resp = await paperlessNgxClient.downloadDocument(
+        resp = await farisDmsClient.downloadDocument(
           document.externalId,
         );
         break;
@@ -291,12 +291,12 @@ export class DocumentService {
   ): Promise<string> {
     const connection = await this.dataSourceConnectionService.refreshAccessTokenIfExpired(dataSourceConnection);
     switch (connection.dataSource) {
-      case DataSource.PAPERLESS_NGX:
-        const paperlessNgxClient = new PaperlessNgxClient(
+      case DataSource.FARIS_DMS:
+        const farisDmsClient = new FarisDmsClient(
           connection.baseUrl!,
           connection.accessToken!,
         );
-        return await paperlessNgxClient.getPreviewUrl(document.externalId);
+        return await farisDmsClient.getPreviewUrl(document.externalId);
       case DataSource.GOOGLE_DRIVE:
         const googleDriveClient = new GoogleDriveClient(
           connection.accessToken!,

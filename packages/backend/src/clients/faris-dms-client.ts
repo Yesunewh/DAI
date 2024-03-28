@@ -10,7 +10,7 @@ import {
   toClientResponseBlob,
 } from "./client-response";
 
-export class PaperlessNgxClient {
+export class FarisDmsClient {
   private baseUrl: string;
   private authToken: string;
 

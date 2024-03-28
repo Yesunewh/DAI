@@ -10,7 +10,7 @@ import {
   NextResponseErrors,
   API,
   DataSourceConnectionService,
-  PaperlessNgxClient,
+  FarisDmsClient,
   toDataSourceConnectionDocumentResponse,
   GoogleDriveClient,
 } from "@repo/backend";
@@ -82,8 +82,8 @@ async function getDocuments(
   searchParams: URLSearchParams,
 ): Promise<Response> {
   switch (dataSourceConnection.dataSource) {
-    case DataSource.PAPERLESS_NGX:
-      return await getDocumentsFromPaperlessNgx(dataSourceConnection, searchParams);
+    case DataSource.FARIS_DMS:
+      return await getDocumentsFromFarisDms(dataSourceConnection, searchParams);
     case DataSource.GOOGLE_DRIVE:
       return await getDocumentsFromGoogleDrive(dataSourceConnection, searchParams);
     case DataSource.NOTION:
@@ -95,17 +95,17 @@ async function getDocuments(
   }
 }
 
-async function getDocumentsFromPaperlessNgx(
+async function getDocumentsFromFarisDms(
   dataSourceConnection: DataSourceConnection,
   searchParams: URLSearchParams,
 ): Promise<Response> {
   const query = searchParams.get(QUERY_PARAM);
   const paginationParams = API.PaginationParams.from(searchParams);
-  const paperlessNgxClient = new PaperlessNgxClient(
+  const farisDmsClient = new FarisDmsClient(
     dataSourceConnection.baseUrl!,
     dataSourceConnection.accessToken!,
   );
-  const documentsSearchResponse = await paperlessNgxClient.getDocuments({
+  const documentsSearchResponse = await farisDmsClient.getDocuments({
     query: query ?? undefined,
     page: paginationParams.page,
     pageSize: paginationParams.pageSize,
