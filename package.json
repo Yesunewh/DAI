@@ -1,5 +1,5 @@
 {
-  "name": "secure-ai-tools",
+  "name": "data-sense",
   "private": true,
   "scripts": {
     "build": "turbo build",

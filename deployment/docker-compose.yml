@@ -10,7 +10,7 @@ version: "3.8"
 
 services:
   web:
-    image: public.ecr.aws/d8f2p0h3/secure-ai-tools:latest
+    image: public.ecr.aws/d8f2p0h3/data_sense:latest
     platform: linux/amd64
     volumes:
       - ./web:/app/volume
@@ -38,7 +38,7 @@ services:
         restart: false
 
   task-master:
-    image: public.ecr.aws/d8f2p0h3/secure-ai-tools:latest
+    image: public.ecr.aws/d8f2p0h3/data_sense:latest
     platform: linux/amd64
     volumes:
       - ./web:/app/volume
@@ -65,7 +65,7 @@ services:
 
   # Performs DB schema migrations and seeds db with initial data if needed.
   db-migrate-and-seed:
-    image: public.ecr.aws/d8f2p0h3/secure-ai-tools:latest
+    image: public.ecr.aws/d8f2p0h3/data_sense:latest
     platform: linux/amd64
     volumes:
       - ./web:/app/volume

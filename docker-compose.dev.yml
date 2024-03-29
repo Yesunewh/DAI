@@ -5,7 +5,6 @@ version: "3.8"
 # WARNING: Do not use this docker compose file in production. It is meant to for development only!
 #
 # Please use the released version of docker-compose.yml file:
-# https://github.com/SecureAI-Tools/SecureAI-Tools/releases/latest/download/docker-compose.yml
 #
 
 services:
@@ -14,9 +13,9 @@ services:
     volumes:
       - ./dev-data/db:/var/lib/postgresql/data
     environment:
-      - POSTGRES_USER=secure-ai-tools-dev
-      - POSTGRES_PASSWORD=SecureAIToolsFTW!
-      - POSTGRES_DB=secure-ai-tools-dev-db
+      - POSTGRES_USER=fkadeal-data-sense-dev
+      - POSTGRES_PASSWORD=DataSensePass
+      - POSTGRES_DB=fkadeal-data-sense-dev-db
     ports:
       - 5432:5432
 
