@@ -55,12 +55,15 @@ const LogInPage: NextPage = () => {
 
   return (
     <Layout>
-      <Navigation />
+      {/* <Navigation /> */}
 
       <Toasts toasts={toasts} />
 
       <div className={tw("max-w-xl mx-auto mt-32 py-16 px-14 sm:px-6 lg:px-8")}>
-        <div className={tw("flex flex-cols")}>
+        <div className={tw("flex flex-col ")}>
+
+          <div className="flex flex-row items-center justify-center ">
+
           <div className={tw("flex items-center mr-5")}>
             <Image
               className={tw("h-20 w-20 mx-auto")}
@@ -70,13 +73,18 @@ const LogInPage: NextPage = () => {
               height={80}
             />
           </div>
-          <div
-            className={tw(
+
+          <p className="ml-4 text-3xl text-gray-800 font-bold">DataSense</p>
+          </div>
+
+          {/* vertical bar separator */}
+           {/* <div className={
+            tw(
               "min-h-[1em] w-px self-stretch bg-gradient-to-tr from-transparent via-gray-500 to-transparent opacity-60 dark:opacity-100",
             )}
           >
-            {/* vertical bar separator */}
-          </div>
+          </div>  */}
+
           <div className={tw("ml-5")}>
             <h1 className={tw("text-2xl font-semibold")}>
               Log in to your account
@@ -140,6 +148,7 @@ const LogInPage: NextPage = () => {
               </div>
             </form>
           </div>
+
         </div>
       </div>
     </Layout>

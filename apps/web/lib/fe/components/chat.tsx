@@ -4,6 +4,8 @@ import { useChat } from "ai/react";
 import { tw } from "twind";
 import { Button, Progress, Spinner, Tooltip } from "flowbite-react";
 import { MdSend } from "react-icons/md";
+import { Viewer, Worker } from '@react-pdf-viewer/core';
+// import { defaultLayoutPlugin } from '@react-pdf-viewer/default-layout';
 
 import ChatInput from "lib/fe/components/chat-input";
 import { ChatResponse } from "lib/types/api/chat.response";
@@ -68,13 +70,15 @@ const MessageEntry = ({
       )}
     >
       <div
-        className={tw("p-4 justify-center text-base md:gap-6 md:py-6 m-auto")}
+        className={tw(" p-4 justify-center text-base md:gap-6 md:py-6 m-auto")}
       >
+         
         <div
           className={tw(
-            "flex flex-1 gap-4 text-base mx-auto md:gap-6 md:max-w-2xl lg:max-w-[38rem] xl:max-w-3xl",
+             "flex flex-1 gap-4 text-base mx-auto md:gap-6 md:max-w-2xl lg:max-w-[38rem] xl:max-w-3xl",
           )}
         >
+           
           <div className={tw("flex-shrink-0 flex flex-col relative w-10")}>
             {message.role === "user" ? "User: " : "AI: "}
           </div>
@@ -335,8 +339,8 @@ export function Chat({
     } else {
       setMessages(msgs);
     }
-  }, []);
-
+  }, []); 
+ 
   return (
     <div className={tw("flex flex-col w-full h-screen")}>
       <div className={tw("flex-1 flex-col overflow-auto")}>
@@ -348,10 +352,76 @@ export function Chat({
             modelType={chat.modelType}
             model={chat.model}
           />
-        </header>
-        {messages.length > 0
+        </header> 
+
+        {/* <div className={tw("flex flex-row")}> */}
+        <div className={tw("flex-1 overflow-y-scroll")}>
+    { messages.length > 0
           ? messages.map((m) => (
-              <MessageEntry
+
+            // messageCitations.get(m.id) && messageCitations.get(m.id).length > 0 ? (
+            //   <div className={tw("mt-4 border-t")}>
+            //     <div className={tw("mt-2 text-xs")}>
+            //       <span className={tw("font-semibold")}>Sources:</span>
+            //       <ul className={tw("ml-2 mt-3 list-disc")}>
+            //         {messageCitations.get(m.id)
+            //           .sort((a, b) => b.score - a.score)
+            //           .map((c) => {
+            //             const doc = documents?.find(
+            //               (d) => d.id === c.documentId,
+            //             );
+            //             return (
+            //               <li key={c.id} className={tw("ml-5 pb-2")}>
+            //                 <Tooltip
+            //                   content={`Open ${doc?.name ?? ""} in new tab`}
+            //                   animation="duration-1000"
+            //                 >
+            //                   <div className={tw("flex flex-row items-center")}>
+            //                     <DocumentIcon mimeType={doc!.mimeType} size={12} />
+            //                     <div className={tw("ml-1")}>
+            //                       <Link
+            //                         href={documentPreviewApiPath(
+            //                           collectionId!,
+            //                           Id.from(doc!.id),
+            //                         )}
+            //                         target="_blank"
+            //                       >
+            //                         {doc!.name}: {c.pageNumber ? `page ${c.pageNumber}` : ""} (lines {c.fromLine}-{c.toLine})
+            //                       </Link>
+            //                     </div>
+            //                   </div>
+            //                 </Tooltip>
+            //               </li>
+            //             );
+            //           })}
+            //       </ul>
+            //     </div>
+            //   </div>
+            // ) : null}
+
+            
+           <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.4.120/build/pdf.worker.js">
+        
+            <div
+                style={{
+                    height: '750px',
+                    width: '900px',
+                    marginLeft: 'auto',
+                    marginRight: 'auto',
+                }}
+            >
+                {/* <Viewer fileUrl={`http://localhost:28669/api/document-collections/${Id.from(chat.documentCollectionId!)}/documents/${'UUFpGgBfIhrt9rmvd9HJq'}/preview`} plugins={[]} /> */}
+            </div>
+        </Worker> 
+        ))
+          : null
+    }
+          </div>  
+
+          <div>
+           {messages.length > 0
+          ? messages.map((m) => (
+              <MessageEntry 
                 key={m.id}
                 message={m}
                 citations={messageCitations.get(m.id)}
@@ -359,7 +429,10 @@ export function Chat({
                 collectionId={Id.from(chat.documentCollectionId!)}
               />
             ))
-          : null}
+          : null}</div>
+          
+        {/* </div> */}
+       
         {isProcessingDocuments && documents ? (
           <div className={tw("flex flex-col items-center mt-16")}>
             <Spinner size="xl" />
@@ -386,6 +459,7 @@ export function Chat({
             ) : null}
           </div>
         ) : null}
+
         {processingDocumentsError ? (
           <div className={tw("flex flex-col items-center m-16 text-red-500")}>
             <div>{processingDocumentsError}</div>

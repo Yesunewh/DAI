@@ -43,7 +43,7 @@ export function Sidebar({
       <FlowbiteSidebar.Logo
         href={FrontendRoutes.APP_HOME}
         img="/logo.png"
-        imgAlt="SecureAI Tools logo"
+        imgAlt="Data Sense AI logo"
         className={tw("mt-8")}
         onClick={(e) => {
           e.preventDefault();

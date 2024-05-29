@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "build": "tsc",
-    "dev": "yarn build && env-cmd -f .env.development node dist/main.js"
+    "dev": "yarn build && env-cmd -f .env node dist/main.js"
   },
   "dependencies": {
     "@repo/backend": "*",
