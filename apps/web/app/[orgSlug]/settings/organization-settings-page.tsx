@@ -54,7 +54,7 @@ export function OrganizationSettingsPage({
         </div>
 
         <div className={tw("mt-6 overflow-x-auto max-w-4xl")}>
-          <Tabs.Group
+          <Tabs
             style="underline"
             ref={tabsRef}
             onActiveTabChange={(tab) => {
@@ -78,7 +78,7 @@ export function OrganizationSettingsPage({
             <Tabs.Item title={<span className={tw("w-16")}>AI</span>} icon={HiChip}>
               <OrgAISettings orgSlug={params.orgSlug} />
             </Tabs.Item>
-          </Tabs.Group>
+          </Tabs>
         </div>
       </div>
     </AppsLoggedInLayout>

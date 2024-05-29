@@ -35,7 +35,7 @@
     "crypto-random-string": "^5.0.0",
     "env-cmd": "^10.1.0",
     "flowbite": "^1.8.1",
-    "flowbite-react": "^0.6.4",
+    "flowbite-react": "^0.7.0",
     "http-status-codes": "^2.2.0",
     "javascript-time-ago": "^2.5.9",
     "langchain": "^0.0.200",

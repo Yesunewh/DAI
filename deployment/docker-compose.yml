@@ -1,9 +1,7 @@
 version: "3.8"
 
 #
-# WARNING: Make sure to use the released version of docker-compose.yml file:
-#
-# https://github.com/SecureAI-Tools/SecureAI-Tools/releases/latest/download/docker-compose.yml
+# WARNING: Make sure to use the released version of docker-compose.yml file: 
 #
 # The docker-compose.yml file on main branch may not be compatible with the latest release.
 #

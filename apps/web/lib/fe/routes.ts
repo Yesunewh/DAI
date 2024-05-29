@@ -71,4 +71,9 @@ export namespace FrontendRoutes {
 
   export const getDataSourcesOAuthCallbackRoute = (dataSource: DataSource): string =>
     `/data-sources/${dataSource.toLowerCase()}/oauth-callback`;
-}
+
+
+export const getPromptLibraryRoute = (orgSlug: string): string =>
+  `/${orgSlug.toLowerCase()}/prompt-library`;
+
+ }

@@ -52,7 +52,7 @@ export function UserSettingsPage() {
         </div>
 
         <div className={tw("mt-6 overflow-x-auto max-w-4xl")}>
-          <Tabs.Group
+          <Tabs
             style="fullWidth"
             ref={tabsRef}
             onActiveTabChange={(tab) => {
@@ -76,7 +76,7 @@ export function UserSettingsPage() {
             <Tabs.Item title="Security" icon={HiKey}>
               <ResetPassword />
             </Tabs.Item>
-          </Tabs.Group>
+          </Tabs>
         </div>
       </div>
     </AppsLoggedInLayout>
