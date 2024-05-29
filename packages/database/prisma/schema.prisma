@@ -7,7 +7,7 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      =  "postgresql://secure-ai-tools-dev:SecureAIToolsFTW!@127.0.0.1:5432/secure-ai-tools-dev-db"//env("DATABASE_URL")
+  url      =  "postgresql://fkadeal-data-sense-dev:DataSensePass@127.0.0.1:5432/fkadeal-data-sense-dev-db"//env("DATABASE_URL")
 }
 
 model User {

@@ -10,7 +10,7 @@ export namespace FrontendRoutes {
   export const POST_LOG_IN = "/post-log-in";
   export const POST_LOG_IN_RESET_PASSWORD = `${POST_LOG_IN}/reset-password`;
   export const NEW = "/new";
-  export const DISCORD_INVITE = "https://discord.gg/YTyPGHcYP9";
+  export const DISCORD_INVITE = "https://discord.gg/faris";
   export const USER_SETTINGS = "/settings";
 
   export const getChatRoute = (

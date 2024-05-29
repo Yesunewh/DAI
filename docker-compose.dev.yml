@@ -8,7 +8,7 @@ version: "3.8"
 #
 
 services:
-  db-dev:
+  db:
     image: postgres:latest
     volumes:
       - ./dev-data/db:/var/lib/postgresql/data
@@ -19,7 +19,7 @@ services:
     ports:
       - 5432:5432
 
-  vector-db-dev:
+  vector-db:
     image: chromadb/chroma:latest
     volumes:
       # Default configuration for persist_directory is "/chroma/chroma/"
@@ -27,7 +27,7 @@ services:
     ports:
       - 8001:8000
 
-  message-broker-dev:
+  message-broker:
     image: rabbitmq:management
     volumes:
       - ./dev-data/message-broker:/var/lib/rabbitmq
@@ -35,3 +35,10 @@ services:
     ports:
       - 5672:5672
       - 15672:15672
+
+  inference:
+    image: ollama/ollama:latest
+    ports:
+      - 11434:11434
+    volumes:
+      - ./inference:/root/.ollamaS

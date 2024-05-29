@@ -114,6 +114,8 @@ services:
 
   inference:
     image: ollama/ollama:latest
+    ports:
+      - 11434:11434
     volumes:
       - ./inference:/root/.ollama
     #

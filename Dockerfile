@@ -9,12 +9,17 @@ FROM --platform=linux/amd64 node:18-alpine AS base
 # Rebuild the source code only when needed
 FROM base AS builder
 # Check https://github.com/nodejs/docker-node/tree/b4117f9333da4138b03a546ec926ef50a31506c3#nodealpine to understand why libc6-compat might be needed.
-RUN apk add --no-cache libc6-compat
+RUN apk add --no-cache libc6-compat openssl
 RUN apk update
 # Set working directory
 WORKDIR /app
-RUN yarn global add turbo
 COPY . .
+RUN echo "NEXTAUTH_SECRET=$(openssl rand -hex 32)" >> ./apps/web/.env.example
+COPY ./apps/web/.env.example ./apps/web/.env 
+COPY ./apps/web/.env.example ./apps/task-master/.env 
+
+RUN yarn global add turbo
+
 RUN turbo prune --scope=web --scope=task-master --docker
 
 
